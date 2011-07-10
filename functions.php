@@ -44,9 +44,9 @@ function get_human_type_from_mime_type($mime_type) {
     case 'application/zip':
       return "Archive Zip";
     case 'image/png':
-      return "Image JPEG";
-    case 'image/jpeg':
       return "Image PNG";
+    case 'image/jpeg':
+      return "Image JPEG";
     default:
       return "Document";
   }
