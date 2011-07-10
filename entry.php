@@ -14,7 +14,7 @@ if (wp_verify_nonce( $_POST['client-file-upload'], 'client-file-upload') && curr
   	unset($_FILES);
   	
     // Post comment
-		$comment_content = 'Attachmend ID: '. $attachment_id;
+		$comment_content = 'Attachment ID: '. $attachment_id;
 		$comment_post_ID = $post->ID;
 		$user = wp_get_current_user();
 		$comment_author       = $user->display_name;
