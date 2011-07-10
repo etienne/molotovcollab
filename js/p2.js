@@ -608,7 +608,7 @@ jQuery(function($) {
 						old_h2 = jqe.find('h2').first();
 						old_pending = jqe.find('.status_badge.pending').first();
 						old_archived = jqe.find('.status_badge.archived').first();
-            jqe.find('.postcontent').empty().append(old_h2).append(old_pending).append(old_archived);
+            jqe.find('.postcontent').empty().append(old_h2).append(old_pending).append(old_archived).append(result.content);
 						
 						if (post.type == 'page') {
 							jQuery('#main h2').first().html(result.title);
