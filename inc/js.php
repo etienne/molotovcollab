@@ -52,6 +52,7 @@ class P2JS {
 
 		//bust the cache here	
 		wp_enqueue_script( 'p2js', P2_JS_URL . '/p2.js', array( 'jquery', 'utils' ), filemtime(P2_JS_PATH . '/p2.js' ) );
+		wp_enqueue_script( 'molotovjs', P2_JS_URL . '/molotov.js', array( 'jquery', 'utils' ));
 		wp_localize_script( 'p2js', 'p2txt', array(
 			'tags' => '<br />' . __( 'Tags:' , 'p2' ),
 		    'tagit' => __( 'Tag it', 'p2' ),
@@ -150,7 +151,7 @@ class P2JS {
 }
 
 function p2_toggle_threads() {
-	$hide_threads = get_option( 'p2_hide_threads' ); ?>
+	$hide_threads = is_singular() ? false : get_option( 'p2_hide_threads' ); ?>
 
 	<script type="text/javascript">
 	/* <![CDATA[ */

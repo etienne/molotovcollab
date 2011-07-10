@@ -1,0 +1,44 @@
+html {
+	background: #f2f1ed !important;
+}
+
+h1 a {
+  width: 480px;
+}
+
+#login {
+  width: 480px;
+}
+
+#login_error, p.message {
+  margin-left: 0;
+}
+
+form {
+  margin-left: 0;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -khtml-border-radius: 0;
+  -webkit-border-radius: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -khtml-box-shadow: none;
+  -webkit-box-shadow: none;
+  border: 0;
+}
+
+body form .input {
+  width: 220px;
+  font-size: 22px;
+}
+
+p#backtoblog {
+  display: none;
+}
+
+form p:first-child:after {
+  content: "@molotovcoop.org";
+  font-family: "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  color: #aaa;
+}

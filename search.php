@@ -3,6 +3,7 @@
  * @package WordPress
  * @subpackage P2
  */
+ 
 ?>
 <?php get_header(); ?>
 
@@ -10,12 +11,11 @@
 
 	<div id="main">
 		<h2>
-			<?php printf( __( 'Search Results for: %s', 'p2' ), get_search_query() ); ?>
-			<span class="controls">
-				<a href="#" id="togglecomments"> <?php _e( 'Toggle Comment Threads', 'p2' ); ?></a> | <a href="#directions" id="directions-keyboard"><?php _e( 'Keyboard Shortcuts', 'p2' ); ?></a>
-			</span>
+			<?php _e( 'Search', 'p2' ) ?>
 		</h2>
-
+    
+		<?php get_search_form(); ?>
+    
 		<?php if ( have_posts() ) : ?>
 
 			<ul id="postlist">
@@ -29,7 +29,6 @@
 			<div class="no-posts">
 			    <h3><?php _e( 'No posts found!', 'p2' ); ?></h3>
 				<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'p2' ); ?></p>
-				<?php get_search_form(); ?>
 			</div>
 
 		<?php endif ?>

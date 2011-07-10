@@ -17,13 +17,12 @@
 
 <div id="header">
 
-	<div class="sleeve">
-		<h1><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php if ( get_bloginfo( 'description' ) ) : ?>
-			<small><?php bloginfo( 'description' ); ?></small>
-		<?php endif; ?>
-		<a class="secondary" href="<?php echo home_url( '/' ); ?>"></a>
-	</div>
+	<h1><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+	<?php if ( get_bloginfo( 'description' ) ) : ?>
+		<small><?php bloginfo( 'description' ); ?></small>
+	<?php endif; ?>
+	<a class="secondary" href="<?php echo home_url( '/' ); ?>"></a>
+	<?php get_search_form(); ?>
 
 </div>
 

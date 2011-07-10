@@ -8,13 +8,6 @@
 	
 </div> <!-- // wrapper -->
 
-<div id="footer">
-	<p>
-		<?php echo prologue_poweredby_link(); ?>
-	    <?php printf( __( 'Theme: %1$s by %2$s.', 'p2' ), 'P2', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
-	</p>
-</div>
-
 <div id="notify"></div>
 
 <div id="help">

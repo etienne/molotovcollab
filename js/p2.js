@@ -42,7 +42,7 @@ jQuery(function($) {
 	function insertCommentInline(postParent, comment_parent, commentHtml, showNotification) {
 		postParent = "#"+postParent;
 		 $(postParent).children('ul.commentlist').show();
-		 $(postParent).children('.discussion').hide();
+     // $(postParent).children('.discussion').hide();
 		if (0 == comment_parent) {
 			if (0 == $(postParent).children('ul.commentlist').length) {
 				$(postParent).append('<ul class="commentlist inlinecomments"></ul>');
@@ -495,16 +495,14 @@ jQuery(function($) {
 			var postContent = jqe.find('.postcontent');
 
 			var titleDiv = document.createElement('div');
-
-			if (post.type == 'post' || post.type == 'page') {
-				var titleInput = titleDiv.appendChild(
-					document.createElement('input'));
-				titleInput.type = 'text';
-				titleInput.className = 'title';
-				defaultText(titleInput, p2txt.title);
-				titleInput.value = post.title;
-				postContent.append(titleDiv);
-			}
+      
+			var titleInput = titleDiv.appendChild(
+				document.createElement('input'));
+			titleInput.type = 'text';
+			titleInput.className = 'title';
+			defaultText(titleInput, p2txt.title);
+			titleInput.value = post.title;
+			postContent.append(titleDiv);
 
 			var cite = '';
 			if (post.type == 'quote') {
@@ -539,18 +537,36 @@ jQuery(function($) {
 			var bottomDiv = document.createElement('div');
 			bottomDiv.className = 'row2';
 
-			if (post.type != 'page') {
-				var tagsInput = document.createElement('input');
-				tagsInput.name = 'tags';
-				tagsInput.className = 'tags';
-				tagsInput.type = 'text';
-			   	tagsInput.value = post.tags.join(', ');
-				defaultText(tagsInput, p2txt.tagit);
-				bottomDiv.appendChild(tagsInput);
-			} else {
-				var tagsInput = '';
-			}
-
+      // if (post.type != 'page') {
+      //  var tagsInput = document.createElement('input');
+      //  tagsInput.name = 'tags';
+      //  tagsInput.className = 'tags';
+      //  tagsInput.type = 'text';
+      //      tagsInput.value = post.tags.join(', ');
+      //  defaultText(tagsInput, p2txt.tagit);
+      //  bottomDiv.appendChild(tagsInput);
+      // } else {
+  			var tagsInput = '';
+      // }
+      
+      if (post.type == 'post') {
+        var statusSelect = document.createElement('select');
+        statusSelect.name = 'status'
+        statusSelect.className = 'status'
+        var statuses = { pending: 'En attente d’approbation', active: 'En cours', archived: 'Archivé' }
+        jQuery.each(statuses, function(key, value) {
+          var option = document.createElement('option');
+          option.value = key;
+          if (post.status == key) {
+            option.selected = 'selected';
+          }
+          var optionText = document.createTextNode(value);
+          option.appendChild(optionText);
+          statusSelect.appendChild(option);
+        });
+        bottomDiv.appendChild(statusSelect);
+      }
+      
 			function tearDownEditor() {
 				$(titleDiv).remove();
 				$(bottomDiv).remove();
@@ -558,6 +574,7 @@ jQuery(function($) {
 				$(editor).remove();
 				jqe.find('.tags').css({display: ''});
 				jqe.find('.postcontent > *').show();
+				jqe.find('.status_badge').attr('style', '');
 				jqe.removeClass('inlineediting');
 				if (post.type == 'page') {
 					jQuery('#main h2').first().show();
@@ -569,33 +586,30 @@ jQuery(function($) {
 			saveButton.innerHTML = p2txt.save;
 			jQuery(saveButton).click(function() {
 				var tags = tagsInput.value == p2txt.tagit ? '' : tagsInput.value;
+				var status = statusSelect.value;
 				var args = {
 					action:'save_post',
 					_inline_edit: nonce,
 					post_ID: 'content-' + postId,
 					content: editor.value,
-					tags: tags
+					tags: tags,
+					status: status
 				};
 
-				if (post.type == 'post' || post.type == 'page') {
+        if (post.type == 'post' || post.type == 'page' || post.type == 'discussions') {
 					args.title = titleInput.value == p2txt.title ? '' : titleInput.value;
-				} else if (post.type == 'quote') {
-					args.citation = citationInput.value == p2txt.citation ? '' : citationInput.value;
-				}
-
+        }
+        
 				jQuery.post(
 					ajaxUrl,
 					args,
 					function(result) {
 						// Preserve existing H2 for posts
-						jqe.find('.postcontent').html(
-							(post.type == 'post') ? jqe.find('h2').first() : ''
-						);
-						if (post.type == 'quote') {
-							jqe.find('.postcontent').append('<blockquote>' + result.content + '</blockquote>');
-						} else {
-							jqe.find('.postcontent').append(result.content);
-						}
+						old_h2 = jqe.find('h2').first();
+						old_pending = jqe.find('.status_badge.pending').first();
+						old_archived = jqe.find('.status_badge.archived').first();
+            jqe.find('.postcontent').empty().append(old_h2).append(old_pending).append(old_archived);
+						
 						if (post.type == 'page') {
 							jQuery('#main h2').first().html(result.title);
 						} else {
@@ -607,6 +621,16 @@ jQuery(function($) {
 							}
 						}
 						tearDownEditor();
+						if (result.status == 'pending') {
+						  jqe.addClass('pending');
+						} else {
+						  jqe.removeClass('pending');
+						}
+						if (result.status == 'archived') {
+						  jqe.addClass('archived');
+						} else {
+						  jqe.removeClass('archived');
+						}
 					},
 					'json');
 				saveButton.parentNode.insertBefore(document.createElement('img'), saveButton).src = templateDir +'/i/indicator.gif';
@@ -644,7 +668,7 @@ jQuery(function($) {
 			$("#respond").addClass('replying').show();
 			$("#comment").focus();
 		});
-
+    
 		switch (type) {
 			case "comment" :
 				var thisCommentEditArea;
@@ -723,15 +747,15 @@ jQuery(function($) {
 		return false;
 	});
 
-	$(".show-comments").click(function(){
-		var commentList = $(this).closest('.post').find('.commentlist');
-		if (isPage) {
-			commentList = $('.page .commentlist');
-		}
-		if (commentList.css('display') == 'none') {
-			commentList.show();
+	$(".show-comments").click(function() {
+		var commentList = $(this).closest('li').find('.commentlist');
+		var respondWrap = $(this).closest('li').find('.respond-wrap')
+		if (respondWrap.css('display') == 'none') {
+			commentList.slideDown("fast");
+			respondWrap.slideDown("fast");
 		} else {
-			commentList.hide();
+			commentList.slideUp("fast");
+			respondWrap.slideUp("fast");
 		}
 		return false;
 	});
@@ -799,7 +823,7 @@ jQuery(function($) {
 
 
 	// Bind actions to comments and posts
-	jQuery('body .post, body .page').each(function() { bindActions(this, 'post'); });
+	jQuery('body .post, body .page, body .discussions').each(function() { bindActions(this, 'post'); });
 	jQuery('body .comment').each(function() { bindActions(this, 'comment'); });
 
 

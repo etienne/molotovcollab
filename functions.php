@@ -26,6 +26,71 @@ if ( function_exists( 'register_sidebar' ) ) {
 	) );
 }
 
+/* Ajouts Molotov */
+
+function custom_login() { 
+  echo '<link rel="stylesheet" type="text/css" href="'.get_bloginfo('template_directory').'/custom-login.css" />'; 
+}
+add_action('login_head', 'custom_login');
+
+function get_human_type_from_mime_type($mime_type) {
+  switch ($mime_type) {
+    case 'application/msword':
+      return "Document Word";
+    case 'application/vnd.ms-excel':
+      return 'Document Excel';
+    case 'application/pdf':
+      return "Document PDF";
+    case 'application/zip':
+      return "Archive Zip";
+    case 'image/png':
+      return "Image JPEG";
+    case 'image/jpeg':
+      return "Image PNG";
+    default:
+      return "Document";
+  }
+}
+
+function get_icon_name_from_mime_type($mime_type) {
+  switch ($mime_type) {
+    case 'application/msword':
+      $icon = "word";
+      break;
+    case 'application/vnd.ms-excel':
+      $icon = "excel";
+      break;
+    case 'application/pdf':
+      $icon = "pdf";
+      break;
+    case 'application/zip':
+      $icon = "zip";
+      break;
+  }
+  return $icon;
+}
+
+function get_icon_path_from_mime_type($mime_type) {
+  $icon = get_icon_name_from_mime_type($mime_type);
+  return get_bloginfo('stylesheet_directory') . '/i/file' . ($icon ? '_' . $icon : '') . '.png';
+}
+
+function exclude_archived( $query ) {
+  if (!($query->is_admin || $query->is_search || $query->is_singular || $query->query['meta_key'] == 'status')) {
+    $arguments = array(
+      'meta_key' => 'status',
+      'meta_value' => 'archived',
+      'meta_compare' => '!='
+    );
+    foreach ($arguments as $argument => $value) {
+      $query->set($argument, $value);
+    }
+  }
+}
+
+add_action( 'pre_get_posts', 'exclude_archived' );
+
+
 // Content Filters
 function p2_get_at_name_map() {
 	global $wpdb;
@@ -248,7 +313,7 @@ function p2_the_title( $before = '<h2>', $after = '</h2>', $returner = false ) {
 		if ( is_single() )
 			$out = $before . $t . $after;
 		else
-			$out = $before . '<a href="' . get_permalink( $temp->ID ) . '">' . $t . '&nbsp;</a>' . $after;
+			$out = $before . '<a href="' . get_permalink( $temp->ID ) . '">' . $t . '</a>' . $after;
 
 		if ( $returner )
 			return $out;
@@ -277,33 +342,56 @@ function p2_comments( $comment, $args, $echo = true ) {
 	$comment_date = get_comment_date();
 	$id = get_comment_ID();
 	$avatar = get_avatar( $comment, 32 );
-	$author_link = get_comment_author_link();
+	$author_link = get_comment_author();
 	$reply_link = prologue_get_comment_reply_link(
 				array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' | ', 'reply_text' => __( 'Reply', 'p2' ) ),
 				$comment->comment_ID, $comment->comment_post_ID );
 	$can_edit = current_user_can( 'edit_post', $comment->comment_post_ID );
 	$edit_comment_url = get_edit_comment_link( $comment->comment_ID );
-	$edit_link = $can_edit? " | <a class='comment-edit-link' href='$edit_comment_url' title='".esc_attr__( 'Edit comment', 'p2' )."'>".__( 'Edit', 'p2' )."</a>" : '';
+	$edit_link = $can_edit? "<a class='comment-edit-link' href='$edit_comment_url' title='".esc_attr__( 'Edit comment', 'p2' )."'>".__( 'Edit', 'p2' )."</a>" : '';
 	$content_class = $can_edit? 'commentcontent comment-edit' : 'commentcontent';
 	$awaiting_message = $comment->comment_approved == '0'? '<p><em>' . __( 'Your comment is awaiting moderation.', 'p2' ) . '</em></p>' : '';
 	$permalink = esc_url( get_comment_link() );
 	$permalink_text = __( 'Permalink', 'p2' );
 	$date_time = p2_date_time_with_microformat( 'comment' );
-	$html = <<<HTML
-<li $comment_class id="comment-$id">
-		$avatar
-		<h4>
-				$author_link
-				<span class="meta">
-						$date_time
-						<span class="actions"><a href="$permalink">$permalink_text</a> $reply_link $edit_link</span>
-				</span>
-		</h4>
-		<div class="$content_class" id="commentcontent-$id">
-				$comment_text
-				$awaiting_message
-		</div>
+	$attachment_id_array = get_comment_meta(get_comment_ID(), 'attachment_id');
+	if (empty($attachment_id_array)) {
+  	$html = <<<HTML
+    <li $comment_class id="comment-$id">
+    		<h4>
+    				<span class="author">$author_link</span>
+    				<span class="meta">
+    						$date_time
+    						<span class="actions">$reply_link $edit_link</span>
+    				</span>
+    		</h4>
+    		<div class="$content_class" id="commentcontent-$id">
+    				$comment_text
+    				$awaiting_message
+    		</div>
 HTML;
+	} else {
+	  $attachment_id = $attachment_id_array[0];
+	  $attachment = get_post($attachment_id);
+	  $attachment_title = $attachment->post_title;
+	  $attachment_url = wp_get_attachment_url($attachment_id);
+	  $attachment_type = get_human_type_from_mime_type($attachment->post_mime_type);
+	  $attachment_icon = get_icon_name_from_mime_type($attachment->post_mime_type);
+  	$html = <<<HTML
+    <li $comment_class id="comment-$id">
+    		<h4>
+    				<span class="author">$author_link</span> a ajouté un fichier
+    				<span class="meta">
+    						$date_time
+    						<span class="actions">$reply_link</span>
+    				</span>
+    		</h4>
+    		<div class="$content_class" id="commentcontent-$id">
+    				<p class="file $attachment_icon"><a href="$attachment_url">$attachment_title</a> <span class="type">($attachment_type)</span></p>
+    				$awaiting_message
+    		</div>
+HTML;
+	}
 	if (!is_single() && get_comment_type() != 'comment' )
 		return false;
 

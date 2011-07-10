@@ -107,22 +107,16 @@ function p2_discussion_links() {
 			else if ( 1 != $counter )
 				$content .= ', ';
 
-			$content .= get_avatar( $comment, 16 ) . ' ' . get_comment_author_link( $comment->comment_ID );
+			$content .= get_comment_author( $comment->comment_ID );
 
 			$counter++;
 		}
 
 		if ( $total_unique_commentors > 3 )
 			if ( ( $total_unique_commentors - 3 ) != 1 )
-				$content .= sprintf( __( ' and %s others are discussing.', 'p2' ), ( $total_unique_commentors - 3 ) );
+				$content .= sprintf( __( ' and %s others', 'p2' ), ( $total_unique_commentors - 3 ) );
 			else
-				$content .= __( ' and one other person are discussing.', 'p2' );
-		else {
-			if ( $total_unique_commentors == 1 )
-				$content .= __( ' is discussing.', 'p2' );
-			else
-				$content .= __( ' are discussing.', 'p2' );
-		}
+				$content .= __( ' and one other person', 'p2' );
 
 		return $content;
 	}

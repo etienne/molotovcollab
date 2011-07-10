@@ -14,12 +14,6 @@
 			
 			<?php while ( have_posts() ) : the_post(); ?>
 			
-				<div class="controls">
-					<a href="#" id="togglecomments"><?php _e( 'Hide threads', 'p2' ); ?></a>
-					&nbsp;|&nbsp;
-					<a href="#directions" id="directions-keyboard"><?php  _e( 'Keyboard Shortcuts', 'p2' ); ?></a>
-				</div>
-		
 				<ul id="postlist">
 		    		<?php p2_load_entry(); // loads entry.php ?>
 				</ul>
@@ -36,11 +30,6 @@
 			
 		<?php endif; ?>
 
-		<div class="navigation">
-			<p class="nav-older"><?php previous_post_link( '%link', __( '&larr;', 'Previous post link', 'p2' ) . ' %title' ); ?></p>
-			<p class="nav-newer"><?php next_post_link( '%link', '%title ' . __( '&rarr;', 'Next post link', 'p2' ) ); ?></p>
-		</div>
-		
 	</div> <!-- main -->
 
 </div> <!-- sleeve -->

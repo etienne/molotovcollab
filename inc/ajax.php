@@ -35,17 +35,12 @@ class P2Ajax {
 		$categories = get_the_category( $post_id );
 		$category_slug = ( isset( $categories[0] ) ) ? $categories[0]->slug : '';
 
-		// handle page as post_type
-		if ( 'page' == $post->post_type ) {
-			$category_slug = 'page';
-			$tags = '';
-		}
-
 		echo json_encode( array(
 			'title' => $post->post_title,
 			'content' => $post->post_content,
-			'type' => $category_slug,
+			'type' => $post->post_type,
 			'tags' => $tags,
+			'status' => get_post_meta($post_id, 'status', true)
 		) );
 	}
 
@@ -114,7 +109,10 @@ class P2Ajax {
 		$new_tags = $_POST['tags'];
 
 		$new_post_title = isset( $_POST['title'] ) ? $_POST['title'] : '';
-
+    
+    $new_status = $_POST['status'];
+    update_post_meta($post_id, 'status', $new_status);
+    
 		if ( ! empty( $new_post_title ) )
 			$post_title = $new_post_title;
 		else
@@ -143,6 +141,7 @@ class P2Ajax {
 			'title' => $post->post_title,
 			'content' => $content,
 			'tags' => get_tags_with_count( $post, '', __( '<br />Tags:' , 'p2' ) . ' ', ', ', ' &nbsp;' ),
+			'status' => get_post_meta($post_id, 'status', true)
 		) );
 
 	}
