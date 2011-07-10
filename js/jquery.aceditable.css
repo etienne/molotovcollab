@@ -1,0 +1,66 @@
+/* */
+.acedit_results {
+	padding: 0px;
+	border: 0px solid #000000;
+	background-color: #ffffff;
+	overflow: hidden;
+	z-index: 99999;
+}
+.acedit_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0px;
+	background-color: #ffffff;
+	border-color: #f3f3f3 #cccccc #cccccc;
+	border-style: solid;
+	border-width: 1px;
+}
+.acedit_results li.noresult_msg {
+	background: #F2F2F2 none repeat scroll 0 0;
+	border: 2px solid #dddddd;
+	padding: 5px 6px;
+}
+.acedit_results li.start_msg {
+	background: #F2F2F2 none repeat scroll 0 0;
+	border: 2px solid #dddddd;
+	padding: 5px 6px;
+}
+.acedit_results li.end_msg {
+	background: #F2F2F2 none repeat scroll 0 0;
+	border: 2px solid #dddddd;
+	padding: 5px 6px;
+}
+.acedit_results li {
+	margin: 0px;
+	text-align: left;
+	padding: 3px 6px;
+	cursor: default;
+	display: block;
+	border-top: 1px solid #eeeeee;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/* width: 100%; */
+	font: menu;
+	font-size: 14px;
+	vertical-align: middle;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+	list-style: none;
+}
+.acedit_odd {
+	background-color: #ffffff;
+}
+.acedit_even {
+	background-color: #eeeeee;
+}
+.acedit_over {
+	background-color: #dddddd;
+}
