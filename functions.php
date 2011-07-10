@@ -76,7 +76,7 @@ function get_icon_path_from_mime_type($mime_type) {
 }
 
 function exclude_archived( $query ) {
-  if (!($query->is_admin || $query->is_search || $query->is_singular || $query->query['meta_key'] == 'status')) {
+  if (!($query->is_admin || $query->is_search || $query->is_singular || $query->query['meta_key'] == 'status' || $query->query['post_type'] == 'attachment')) {
     $arguments = array(
       'meta_key' => 'status',
       'meta_value' => 'archived',

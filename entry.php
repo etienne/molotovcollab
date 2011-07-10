@@ -141,8 +141,6 @@ if ($status = get_post_meta($post->ID, 'status', true)) {
   		<?php endif; ?>
 	  <?php if (is_singular()): ?>
 	  </div>
-    <?php endif; ?>
-	  <?php if (is_singular()): ?>
   	  <div id="files-wrapper" class="tab-panel">
   	    <?php
         $args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
