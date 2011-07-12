@@ -90,6 +90,11 @@ function exclude_archived( $query ) {
 
 add_action( 'pre_get_posts', 'exclude_archived' );
 
+function remove_comment_flood_block() {
+  return false;
+}
+add_filter('comment_flood_filter', 'remove_comment_flood_block'); 
+
 
 // Content Filters
 function p2_get_at_name_map() {

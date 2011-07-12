@@ -1,0 +1,15 @@
+TODO
+
+- Ne pas cacher le formulaire d'ajout de commentaire après avoir fait Post
+- Ajouter la possibilité de commenter un fichier téléchargé
+- Notifications ne marchent pas
+- Permettre de modifier en tout temps les préférences de notifications
+- Afficher le nom des clients dans la liste des projets
+- Permettre d'effacer des fichiers
+- Clarifier la distinction client/titre lors de la création d'un projet
+- Permettre de changer le nom du client une fois un projet créé
+- Rendre possible l'upload de plusieurs fichiers à la fois
+- Ajouter un lien pour se déconnecter
+
+Done
+- Enlever le comment flood block patente (2011.07.11)
