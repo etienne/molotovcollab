@@ -44,12 +44,12 @@ jQuery(function($) {
 		 $(postParent).children('ul.commentlist').show();
      // $(postParent).children('.discussion').hide();
 		if (0 == comment_parent) {
-			if (0 == $(postParent).children('ul.commentlist').length) {
+			if (0 == $(postParent).find('ul.inlinecomments').length) {
 				$(postParent).append('<ul class="commentlist inlinecomments"></ul>');
 				commentsLists = $("ul.commentlist");
 			}
-			$(postParent).children('ul.commentlist').append('<div class="temp_newComments_cnt"></div>');
-			var newComment =  $(postParent).children('ul.commentlist').children('div.temp_newComments_cnt');
+			$(postParent).find('ul.inlinecomments').append('<div class="temp_newComments_cnt"></div>');
+			var newComment =  $(postParent).find('ul.inlinecomments').children('div.temp_newComments_cnt');
 		} else {
 			comment_parent = '#comment-' + comment_parent;
 			//$(comment_parent).toggle();
@@ -312,23 +312,20 @@ jQuery(function($) {
 			data: dataString,
 			success: function(result) {
 				submitProgress.fadeOut();
-				$("#respond").slideUp( 200, function() {
-					var lastComment = $("#respond").prev("li");
-					if (isNaN(result) || 0 == result || 1 == result)
-						errorMessage = result;
-					$('#comment').val('');
-					if (errorMessage != "")
-						newNotification(errorMessage);
-					getComments(false);
+				var lastComment = $("#respond").prev("li");
+				if (isNaN(result) || 0 == result || 1 == result)
+					errorMessage = result;
+				$('#comment').val('');
+				if (errorMessage != "")
+					newNotification(errorMessage);
+				getComments(false);
 
-					if (!isPage)
-						toggleUpdates('unewcomments');
+				if (!isPage)
+					toggleUpdates('unewcomments');
 
-					thisFormElements.attr('disabled', false);
-					thisFormElements.removeClass('disabled');
-				});
-
-			  }
+				thisFormElements.attr('disabled', false);
+				thisFormElements.removeClass('disabled');
+		  }
 		});
 	}
 

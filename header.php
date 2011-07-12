@@ -22,8 +22,12 @@
 		<small><?php bloginfo( 'description' ); ?></small>
 	<?php endif; ?>
 	<a class="secondary" href="<?php echo home_url( '/' ); ?>"></a>
-	<?php get_search_form(); ?>
-
+	<div class="utilities">
+  	<?php get_search_form(); ?>
+  	<div class="identity">
+  	  Salut <span><?php p2_user_identity() ?></span>. <a href="<?php echo wp_logout_url(home_url()) ?>">Déconnexion</a>
+  	</div>
+	</div>
 </div>
 
 <div id="wrapper">

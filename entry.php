@@ -133,7 +133,7 @@ if ($status = get_post_meta($post->ID, 'status', true)) {
   							esc_attr( 'Loading...', 'p2' )
   						),
   						'label_submit' => __( 'Reply', 'p2' ),
-  						'id_submit' => 'comment-submit',
+  						'id_submit' => 'comment-submit'
   					);
   					comment_form( $p2_comment_args );
   				?>

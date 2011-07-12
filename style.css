@@ -70,6 +70,18 @@ h1 {
   text-indent: -9999px;
 }
 
+#header .identity {
+  font-size: 11px;
+  line-height: 19px;
+  margin-right: 12px;
+  float: right;
+  color: #666;
+}
+
+#header .identity span {
+  font-weight: bold;
+}
+
 blockquote {
 	padding-left: 8px;
 	color: #888;
@@ -750,7 +762,7 @@ h2 a.rss:hover {
 	padding-left: 6px;
 }
 
-#header #searchform {
+#header .utilities {
   position: absolute;
   right: 0;
   bottom: 16px;
@@ -758,6 +770,10 @@ h2 a.rss:hover {
 
 #searchform label {
 	display: none;
+}
+
+#header #searchform {
+  float: right;
 }
 
 #header #searchform input.field {
