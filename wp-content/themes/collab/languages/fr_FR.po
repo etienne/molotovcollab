@@ -1,0 +1,664 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: P2 en français\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-09 09:08-0500\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Étienne Després\n"
+"Language-Team: Nicolas Friedli <nicolas@theologique.ch>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n>1\n"
+"X-Poedit-SearchPath-0: C:\\Documents and Settings\\Administrateur.MCE2005\\Bureau\\p2\n"
+"X-Poedit-SearchPath-1: ../.\n"
+
+#: .././404.php:13
+msgid "Not Found"
+msgstr "Bredouille"
+
+#: .././404.php:14
+#: .././search.php:31
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr "Désolé, aucun projet ou discussion n'a été trouvé."
+
+#: .././attachment.php:44
+#, php-format
+msgid "Full size is %s pixels"
+msgstr ""
+
+#: .././attachment.php:47
+msgid "Link to full-size image"
+msgstr ""
+
+#: .././attachment.php:68
+msgid "View file:"
+msgstr ""
+
+#: .././attachment.php:69
+#: .././entry.php:94
+msgid "(More ...)"
+msgstr "(Plus...)"
+
+#: .././comments.php:20
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: .././comments.php:21
+#, fuzzy
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires récents"
+
+#: .././entry.php:28
+#: .././inc/ajax.php:306
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Erreur: merci de remplir les champs obligatoires (nom, email)"
+
+#: .././entry.php:30
+#: .././inc/ajax.php:308
+msgid "Error: please enter a valid email address."
+msgstr "Erreur: merci d'entrer une adresse de messagerie valide"
+
+#: .././entry.php:34
+#: .././inc/ajax.php:312
+msgid "Error: Please type a comment."
+msgstr "Erreur: saisissez un commentaire"
+
+#: .././entry.php:73
+#: .././functions.php:215
+#: .././functions.php:331
+msgid "Edit"
+msgstr "Modifier"
+
+#: .././entry.php:80
+#: .././inc/ajax.php:143
+#, fuzzy
+msgid "<br />Tags:"
+msgstr "Tags:"
+
+#: .././entry.php:102
+msgid "Toggle Comments"
+msgstr "Discussion"
+
+#: .././entry.php:107
+msgid "Pages:"
+msgstr "Pages:"
+
+#: .././entry.php:128
+#: .././entry.php:136
+#: .././functions.php:327
+#: .././functions.php:611
+msgid "Reply"
+msgstr "Répondre"
+
+#: .././entry.php:130
+#, php-format
+msgid "Required fields are marked %s"
+msgstr ""
+
+#: .././footer.php:15
+msgid "compose new post"
+msgstr "écrire un nouveau billet"
+
+#: .././footer.php:16
+msgid "next post/next comment"
+msgstr "billet / commentaire suivant"
+
+#: .././footer.php:17
+msgid "previous post/previous comment"
+msgstr "billet / commentaire précédent"
+
+#: .././footer.php:18
+msgid "reply"
+msgstr "répondre"
+
+#: .././footer.php:19
+msgid "edit"
+msgstr "éditer"
+
+#: .././footer.php:20
+msgid "show/hide comments"
+msgstr "montrer / cacher les commentaires"
+
+#: .././footer.php:21
+msgid "go to top"
+msgstr "bondir en haut"
+
+#: .././footer.php:22
+#, fuzzy
+msgid "go to login"
+msgstr "bondir en haut"
+
+#: .././footer.php:23
+#, fuzzy
+msgid "show/hide help"
+msgstr "montrer / cacher les commentaires"
+
+#: .././footer.php:24
+msgid "cancel"
+msgstr "annuler"
+
+#: .././functions.php:25
+msgid "Sidebar"
+msgstr ""
+
+#: .././functions.php:215
+msgid "on"
+msgstr "sur"
+
+#: .././functions.php:215
+#: .././functions.php:335
+msgid "Permalink"
+msgstr "Permalien"
+
+#: .././functions.php:220
+#: .././functions.php:333
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente d'acceptation"
+
+#: .././functions.php:425
+msgid "Video Post"
+msgstr "Billet vidéo"
+
+#: .././functions.php:427
+msgid "Image Post"
+msgstr "Billet image"
+
+#: .././functions.php:612
+msgid "Log in to Reply"
+msgstr "Connectez-vous pour répondre"
+
+#: .././functions.php:656
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: .././functions.php:656
+#, php-format
+msgid "Proudly powered by %s."
+msgstr ""
+
+#: .././functions.php:847
+#: .././functions.php:856
+msgid "After typing @, type a name or username to find a member of this site"
+msgstr ""
+
+#: .././functions.php:848
+#: .././functions.php:857
+msgid "No matches."
+msgstr ""
+
+#: .././index.php:18
+msgid "Recent Updates"
+msgstr "Derniers projets"
+
+#: .././index.php:18
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
+
+#: .././index.php:50
+#: .././single.php:27
+msgid "No posts yet!"
+msgstr "Pas de billet pour le moment"
+
+#: .././index.php:57
+#: .././search.php:38
+#: .././tag.php:34
+#, fuzzy
+msgid "&larr; Older posts"
+msgstr "Anciens&nbsp;billets&nbsp;&rarr;"
+
+#: .././index.php:58
+#: .././search.php:39
+#: .././tag.php:35
+#, fuzzy
+msgid "Newer posts &rarr;"
+msgstr "&larr;&nbsp;Derniers&nbsp;billets"
+
+#: .././post-form.php:16
+#: .././post-form.php:55
+#: .././post-form.php:56
+#: .././inc/ajax.php:199
+#, fuzzy
+msgid "Post Title"
+msgstr "Publier"
+
+#: .././post-form.php:34
+#, fuzzy
+msgid "Status Update"
+msgstr "Dernières mises à jour: %s"
+
+#: .././post-form.php:35
+#, fuzzy
+msgid "Blog Post"
+msgstr "Billet vidéo"
+
+#: .././post-form.php:36
+msgid "Quote"
+msgstr ""
+
+#: .././post-form.php:37
+msgid "Link"
+msgstr ""
+
+#: .././post-form.php:65
+#: .././post-form.php:68
+#: .././post-form.php:69
+msgid "Citation"
+msgstr ""
+
+#: .././post-form.php:75
+#: .././post-form.php:76
+#: .././inc/ajax.php:196
+msgid "Tag it"
+msgstr "Tagger"
+
+#: .././search.php:13
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de la recherche pour: %s"
+
+#: .././search.php:15
+msgid "Toggle Comment Threads"
+msgstr "Affichage des discussions"
+
+#: .././search.php:15
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis clavier"
+
+#: .././search.php:30
+#: .././tag.php:28
+msgid "No posts found!"
+msgstr "Bredouille"
+
+#: .././searchform.php:11
+msgid "Search"
+msgstr "Recherche"
+
+#: .././tag.php:13
+#, fuzzy, php-format
+msgid "Tagged: %s"
+msgstr "Page %s"
+
+#: .././inc/ajax.php:21
+#: .././inc/ajax.php:76
+#: .././inc/ajax.php:87
+#: .././inc/ajax.php:152
+#: .././inc/ajax.php:181
+msgid "Error: not logged in."
+msgstr "Erreur: vous n'êtes pas connecté"
+
+#: .././inc/ajax.php:26
+#: .././inc/ajax.php:94
+msgid "Error: not allowed to edit post."
+msgstr "Erreur: vous n'avez pas la permission d'éditer ce billet"
+
+#: .././inc/ajax.php:160
+msgid "Error: not allowed to edit this comment."
+msgstr "Erreur: vous n'avez pas la permission d'éditer ce commentaire"
+
+#: .././inc/ajax.php:186
+msgid "Error: not allowed to post."
+msgstr "Erreur: vous n'avez pas le droit de poster"
+
+#: .././inc/ajax.php:295
+msgid "Error: you must be logged in to post a comment."
+msgstr "Erreur: vous devez être connecté pour poster un commentaire"
+
+#: .././inc/ajax.php:326
+msgid "Error: Unknown error occurred. Comment not posted."
+msgstr "Erreur: une erreur inconnue a empêché la publication de votre commentaire"
+
+#: .././inc/js.php:57
+msgid "Tags:"
+msgstr "Tags:"
+
+#: .././inc/js.php:61
+msgid "Go to homepage"
+msgstr "À la page d'accueil"
+
+#: .././inc/js.php:63
+#, php-format
+msgid "%d new update(s)"
+msgstr "%d mise(s) à jour"
+
+#: .././inc/js.php:64
+#, php-format
+msgid "%d new comment(s)"
+msgstr "%d nouveau(x) commentaire(s)"
+
+#: .././inc/js.php:65
+msgid "Jump to top"
+msgstr "Bondir au sommet"
+
+#: .././inc/js.php:66
+msgid "An error has occurred, your post was not posted"
+msgstr "Une erreur a empêché la publication de votre billet"
+
+#: .././inc/js.php:67
+msgid "Your update has been posted"
+msgstr "Votre mise à jour a été postée"
+
+#: .././inc/js.php:68
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: .././inc/js.php:69
+msgid "Cancel"
+msgstr "Annuler"
+
+#: .././inc/js.php:70
+msgid "Save"
+msgstr "Enregistrer"
+
+#: .././inc/js.php:71
+msgid "Hide threads"
+msgstr "Cacher les fils"
+
+#: .././inc/js.php:72
+msgid "Show threads"
+msgstr "Montrer les fils"
+
+#: .././inc/js.php:73
+msgid "Your comments or posts will be lost if you continue."
+msgstr "Votre comementaire ou votre billet sera perdu si vous continuez."
+
+#: .././inc/js.php:74
+#: .././inc/template-tags.php:269
+#, php-format
+msgid "%1$s <em>on</em> %2$s"
+msgstr "%2$s <em>à</em> %1$s"
+
+#: .././inc/options-page.php:10
+#, fuzzy
+msgid "Theme Options"
+msgstr "Mettre les options à jour"
+
+#: .././inc/options-page.php:53
+#: .././inc/options-page.php:163
+#, fuzzy
+msgid "Whatcha' up to?"
+msgstr "Qu'as-tu à dire?"
+
+#: .././inc/options-page.php:80
+msgid "Options saved."
+msgstr "Options sauvées."
+
+#: .././inc/options-page.php:86
+#, fuzzy
+msgid "P2 Options"
+msgstr "Options de Prologue"
+
+#: .././inc/options-page.php:91
+msgid "Functionality Options"
+msgstr ""
+
+#: .././inc/options-page.php:99
+msgid "Posting Access:"
+msgstr ""
+
+#: .././inc/options-page.php:105
+#, fuzzy
+msgid "Allow any WordPress.com member to post"
+msgstr "Blog à WordPress.com"
+
+#: .././inc/options-page.php:107
+msgid "Allow any registered member to post"
+msgstr ""
+
+#: .././inc/options-page.php:115
+#, fuzzy
+msgid "Hide Threads:"
+msgstr "Cacher les fils"
+
+#: .././inc/options-page.php:119
+msgid "Hide comment threads by default"
+msgstr ""
+
+#: .././inc/options-page.php:129
+#, fuzzy
+msgid "Design Options"
+msgstr "Mettre les options à jour"
+
+#: .././inc/options-page.php:135
+#, fuzzy
+msgid "Custom Background Color:"
+msgstr "Couleur de fond du texte:"
+
+#: .././inc/options-page.php:137
+msgid "Pick a Color"
+msgstr ""
+
+#: .././inc/options-page.php:143
+msgid "Background Image:"
+msgstr ""
+
+#: .././inc/options-page.php:145
+#, fuzzy
+msgid "None"
+msgstr "sur"
+
+#: .././inc/options-page.php:146
+msgid "Bubbles"
+msgstr ""
+
+#: .././inc/options-page.php:147
+msgid "Polka Dots"
+msgstr ""
+
+#: .././inc/options-page.php:148
+msgid "Squares"
+msgstr ""
+
+#: .././inc/options-page.php:149
+msgid "Plaid"
+msgstr ""
+
+#: .././inc/options-page.php:150
+msgid "Stripes"
+msgstr ""
+
+#: .././inc/options-page.php:154
+msgid "Sidebar display:"
+msgstr ""
+
+#: .././inc/options-page.php:157
+#, fuzzy
+msgid "Hide the Sidebar"
+msgstr "Cacher les fils"
+
+#: .././inc/options-page.php:161
+#, fuzzy
+msgid "Post prompt:"
+msgstr "Commentaire au billet"
+
+#: .././inc/options-page.php:164
+msgid "if empty, defaults to <strong>Whatcha up to?</strong>"
+msgstr ""
+
+#: .././inc/options-page.php:168
+#, fuzzy
+msgid "Post Titles:"
+msgstr "Publier"
+
+#: .././inc/options-page.php:171
+msgid "Display titles"
+msgstr "Montrer les titres"
+
+#: .././inc/options-page.php:236
+msgid "Hide Text"
+msgstr ""
+
+#: .././inc/options-page.php:242
+msgid "Show Text"
+msgstr ""
+
+#: .././inc/template-tags.php:106
+msgid ", and "
+msgstr " et "
+
+#: .././inc/template-tags.php:117
+#, php-format
+msgid " and %s others"
+msgstr " et %s autres"
+
+#: .././inc/template-tags.php:119
+msgid " and one other person"
+msgstr " et une autre personne"
+
+#: .././inc/template-tags.php:162
+#, php-format
+msgid "Hi, %s. %s"
+msgstr ""
+
+#: .././inc/template-tags.php:162
+msgid "Whatcha up to?"
+msgstr "Qu'as-tu à dire?"
+
+#: .././inc/widgets/recent-comments.php:5
+#, fuzzy
+msgid "P2 Recent Comments"
+msgstr "Commentaires récents"
+
+#: .././inc/widgets/recent-comments.php:5
+#, fuzzy
+msgid "Recent comments with avatars."
+msgstr "Commentaires récents"
+
+#: .././inc/widgets/recent-comments.php:30
+#, fuzzy
+msgid "No avatar"
+msgstr "Pas d'avatar"
+
+#: .././inc/widgets/recent-comments.php:34
+#: .././inc/widgets/recent-tags.php:19
+msgid "Title:"
+msgstr "Titre:"
+
+#: .././inc/widgets/recent-comments.php:40
+msgid "Number of comments to show:"
+msgstr "Nombre de commentaires à montrer"
+
+#: .././inc/widgets/recent-comments.php:46
+#, fuzzy
+msgid "Avatars:"
+msgstr "Pas d'avatar"
+
+#: .././inc/widgets/recent-comments.php:67
+#, fuzzy
+msgid "Recent comments"
+msgstr "Commentaires récents"
+
+#: .././inc/widgets/recent-comments.php:126
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: .././inc/widgets/recent-comments.php:157
+#, php-format
+msgid "%s on <a href='%s' class='tooltip' title='%s'>%s</a>"
+msgstr "%s sur <a href='%s' class='tooltip' title='%s'>%s</a>"
+
+#: .././inc/widgets/recent-tags.php:5
+#, fuzzy
+msgid "P2 Recent Tags"
+msgstr "Tags récents"
+
+#: .././inc/widgets/recent-tags.php:5
+msgid "The tags from the latest posts."
+msgstr ""
+
+#: .././inc/widgets/recent-tags.php:25
+#, fuzzy
+msgid "Number of tags to show:"
+msgstr "Nombre de tags à montrer:"
+
+#: .././inc/widgets/recent-tags.php:41
+#, fuzzy
+msgid "Recent tags"
+msgstr "Tags récents"
+
+#: .././inc/widgets/recent-tags.php:61
+msgid "All Updates RSS"
+msgstr "RSS de toutes les mises à jour"
+
+#, fuzzy
+#~ msgid "&rarr;"
+#~ msgstr "Déconnexion &rarr;"
+
+#~ msgid " is discussing."
+#~ msgstr " participe à la discussion."
+
+#~ msgid " are discussing."
+#~ msgstr " participent à la discussion."
+
+#~ msgid "Updates from %s|month"
+#~ msgstr "Mises à jour depuis %s|month"
+
+#~ msgid "Read the rest of this page &rarr;"
+#~ msgstr "Lire la suite de cette page &rarr;"
+
+#~ msgid "Updates from %s|name"
+#~ msgstr "Mises à jour de %s|name"
+
+#~ msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+#~ msgstr "Connecté en tant que <a href=\"%1$s\">%2$s</a>."
+
+#~ msgid "Log out of this account"
+#~ msgstr "Se déconnecter"
+
+#~ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%s\">connecté</a> pour poster un commentaire."
+
+#~ msgid "Name <em>(required)</em>"
+#~ msgstr "Nom <em>(obligatoire)</em>"
+
+#~ msgid "Email <em>(required)</em>"
+#~ msgstr "E-mail <em>(obligatoire)</em>"
+
+#~ msgid "Web Site"
+#~ msgstr "Site web"
+
+#~ msgid "Please do not load this page directly. Thanks!"
+#~ msgstr "Merci de ne pas charger cette page directement!"
+
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view comments."
+#~ msgstr ""
+#~ "Ce billet est protégé par un mot de passe. Saisissez le mot de passe pour "
+#~ "voir les commentaires."
+
+#~ msgid "P2 theme by %s."
+#~ msgstr "Thème p2 par %s."
+
+#~ msgid "Edit comment"
+#~ msgstr "Éditer le commentaire"
+
+#~ msgid "No Title"
+#~ msgstr "Pas de titre"
+
+#~ msgid "(at most 15)"
+#~ msgstr "(au plus 15)"
+
+#~ msgid "Avatar Size (px):"
+#~ msgstr "Taille de l'avatar (px):"
+
+#~ msgid "Avatar background color:"
+#~ msgstr "Couleur de fond de l'avatar"
+
+#~ msgid "&larr;&nbsp;Newer&nbsp;Posts"
+#~ msgstr "&larr;&nbsp;Derniers&nbsp;billets"
+
+#~ msgid "Older&nbsp;Posts&nbsp;&rarr;"
+#~ msgstr "Anciens&nbsp;billets&nbsp;&rarr;"
+
+#~ msgid "<strong>%1$s</strong> is proudly powered by %2$s."
+#~ msgstr "<strong>%1$s</strong> est fièremement propolsé par %2$s."
+
+#~ msgid "Hi, %s. Whatcha up to?"
+#~ msgstr "Salut, %s. Qu'as-tu à dire?"
